@@ -11,6 +11,11 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private long extime;
 
+    /**
+     * Initializes the activity, sets up view binding, configures the main WebView's settings, and loads the initial URL.
+     *
+     * @param savedInstanceState a Bundle containing the activity's previously saved state, or null if none
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         binding.webview.loadUrl("https://google.com");
     }
 
+    /**
+     * Handles the system back button by navigating the embedded WebView back when possible; if the WebView cannot go back, requires a double press within 2 seconds to exit the activity.
+     *
+     * If the WebView can navigate back, this performs a back navigation. Otherwise, the first back press shows a short toast using R.string.exitmess and a second back press within 2000 milliseconds calls finish().
+     */
     @Override
     public void onBackPressed() {
         if(binding.webview.canGoBack()) {
