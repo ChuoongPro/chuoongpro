@@ -68,7 +68,7 @@ jobs:
           fi
 
       - name: Upload Release APK
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: apk-release-${{ steps.set_sha.outputs.short_sha }}
           path: app/build/outputs/apk/release/app-release-*.apk
